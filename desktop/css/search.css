@@ -1,0 +1,62 @@
+/* Search Page */
+.search-header {
+  background: var(--color-primary);
+  padding: var(--space-xl) 0;
+  color: var(--color-white);
+}
+
+.search-header h1 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.search-input-wrap {
+  position: relative;
+  max-width: 600px;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.search-input-wrap input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.search-input-wrap .search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-600);
+}
+
+.search-group-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+}
+
+.search-no-results {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  color: var(--color-text-muted);
+}
+
+.search-no-results i {
+  font-size: 3rem;
+  color: var(--color-gray-300);
+  display: block;
+  margin-bottom: var(--space-md);
+}

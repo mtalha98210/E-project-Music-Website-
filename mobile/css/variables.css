@@ -1,0 +1,55 @@
+:root {
+  /* Primary palette */
+  --color-primary:        #1565C0;
+  --color-primary-light:  #1E88E5;
+  --color-primary-dark:   #0D47A1;
+  --color-accent:         #42A5F5;
+
+  /* Neutrals */
+  --color-white:          #FFFFFF;
+  --color-off-white:      #F5F8FF;
+  --color-gray-100:       #EEF2F7;
+  --color-gray-300:       #B0BEC5;
+  --color-gray-600:       #546E7A;
+  --color-gray-900:       #1A1A2E;
+
+  /* Semantic */
+  --color-bg:             var(--color-off-white);
+  --color-surface:        var(--color-white);
+  --color-text:           var(--color-gray-900);
+  --color-text-muted:     var(--color-gray-600);
+  --color-border:         var(--color-gray-100);
+
+  /* Typography */
+  --font-family-base:     'Segoe UI', system-ui, sans-serif;
+  --font-size-base:       16px;
+  --line-height-base:     1.6;
+
+  /* Spacing */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   48px;
+  --space-xxl:  80px;
+
+  /* Radius */
+  --radius-sm:   4px;
+  --radius-md:   10px;
+  --radius-lg:   20px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(21, 101, 192, 0.10);
+  --shadow-nav:  0 2px 12px rgba(21, 101, 192, 0.12);
+  --shadow-lg:   0 12px 40px rgba(21, 101, 192, 0.18);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow:   600ms ease;
+
+  /* Player */
+  --player-height-desktop: 72px;
+  --player-height-mobile:  64px;
+}

@@ -1,0 +1,66 @@
+<nav class="mw-navbar">
+  <a class="navbar-brand" href="../index.html">Music<span>World</span></a>
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- Overlay -->
+<div class="nav-drawer-overlay" id="drawer-overlay"></div>
+
+<!-- Side Drawer -->
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer__header">
+    <span class="nav-drawer__brand">Music<span>World</span></span>
+    <button class="nav-drawer__close" id="drawer-close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="nav-drawer__body">
+    <!-- Search -->
+    <div style="padding: 0.5rem 1rem 0.5rem;">
+      <form id="navbar-search-form" style="position:relative;">
+        <i class="fas fa-search" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--color-gray-600);font-size:0.8rem;"></i>
+        <input type="text" id="navbar-search-input" placeholder="Search..." style="width:100%;padding:0.5rem 0.75rem 0.5rem 2.2rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:0.875rem;background:var(--color-gray-100);">
+      </form>
+    </div>
+
+    <p class="drawer-section-title">Genres</p>
+    <a href="category.html?genre=rock" class="drawer-link"><i class="fas fa-guitar"></i>Rock</a>
+    <a href="category.html?genre=jazz" class="drawer-link"><i class="fas fa-music"></i>Jazz</a>
+    <a href="category.html?genre=pop" class="drawer-link"><i class="fas fa-star"></i>Pop</a>
+    <a href="category.html?genre=rap" class="drawer-link"><i class="fas fa-microphone"></i>Rap</a>
+    <a href="category.html?genre=classical" class="drawer-link"><i class="fas fa-music"></i>Classical</a>
+
+    <p class="drawer-section-title">Discover</p>
+    <a href="search.html?filter=new" class="drawer-link"><i class="fas fa-fire"></i>New Releases</a>
+    <a href="search.html?filter=best" class="drawer-link"><i class="fas fa-trophy"></i>Best of Year</a>
+    <a href="reviews.html" class="drawer-link"><i class="fas fa-star"></i>Reviews</a>
+    <a href="articles.html" class="drawer-link"><i class="fas fa-newspaper"></i>Articles</a>
+  </div>
+  <div class="nav-drawer__footer">
+    <div id="nav-user-info" class="d-none mb-2 text-center">
+      <span class="fw-semibold text-primary" id="nav-username"></span>
+      <button class="btn-logout ms-2" onclick="Auth.logout()" style="background:none;border:1px solid var(--color-border);border-radius:var(--radius-pill);padding:0.2rem 0.6rem;font-size:0.8rem;cursor:pointer;">Sign Out</button>
+    </div>
+    <button class="nav-drawer__auth-btn" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal">
+      <i class="fas fa-user me-2"></i>Sign In / Register
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('hamburger-btn');
+  var drawer = document.getElementById('nav-drawer');
+  var overlay = document.getElementById('drawer-overlay');
+  var closeBtn = document.getElementById('drawer-close');
+  function open(){ drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
+  if(btn) btn.addEventListener('click', open);
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  if(overlay) overlay.addEventListener('click', close);
+  var searchForm = document.getElementById('navbar-search-form');
+  if(searchForm) searchForm.addEventListener('submit', function(e){ e.preventDefault(); var q=document.getElementById('navbar-search-input'); if(q&&q.value.trim()) window.location.href='search.html?q='+encodeURIComponent(q.value.trim()); });
+})();
+</script>

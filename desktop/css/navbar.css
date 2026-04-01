@@ -1,0 +1,133 @@
+/* Desktop Navbar */
+.mw-navbar {
+  background: var(--color-white);
+  box-shadow: var(--shadow-nav);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 var(--space-lg);
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.mw-navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.mw-navbar .navbar-brand span {
+  color: var(--color-primary-light);
+}
+
+.mw-navbar .nav-link {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  transition: color var(--transition-fast);
+}
+
+.mw-navbar .nav-link:hover,
+.mw-navbar .nav-link:focus {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.mw-navbar .dropdown-menu {
+  border: none;
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) 0;
+  min-width: 180px;
+}
+
+.mw-navbar .dropdown-item {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  padding: 0.4rem 1rem;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.mw-navbar .dropdown-item:hover {
+  background: var(--color-gray-100);
+  color: var(--color-primary);
+}
+
+.mw-navbar .dropdown-divider {
+  border-color: var(--color-border);
+}
+
+/* Search expand */
+.navbar-search {
+  position: relative;
+}
+
+.navbar-search input {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 1rem 0.35rem 2.2rem;
+  font-size: 0.875rem;
+  width: 200px;
+  transition: width var(--transition-normal), border-color var(--transition-fast);
+  background: var(--color-gray-100);
+}
+
+.navbar-search input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  width: 260px;
+  background: var(--color-white);
+}
+
+.navbar-search .search-icon {
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-600);
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+/* Auth buttons */
+.navbar-auth .btn-auth {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.navbar-auth .btn-auth:hover {
+  background: var(--color-primary-dark);
+}
+
+.navbar-auth .nav-username {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.navbar-auth .btn-logout {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.navbar-auth .btn-logout:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}

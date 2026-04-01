@@ -1,0 +1,86 @@
+<nav class="mw-navbar navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Music<span>World</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Rock -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rock</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="category.html?genre=rock&sub=classic-rock">Classic Rock</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=rock&sub=hard-rock">Hard Rock</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=rock&sub=alternative-rock">Alternative Rock</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item fw-semibold" href="category.html?genre=rock">View All Rock</a></li>
+          </ul>
+        </li>
+        <!-- Jazz -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Jazz</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="category.html?genre=jazz&sub=bebop">Bebop</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=jazz&sub=smooth-jazz">Smooth Jazz</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=jazz&sub=fusion-jazz">Fusion Jazz</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item fw-semibold" href="category.html?genre=jazz">View All Jazz</a></li>
+          </ul>
+        </li>
+        <!-- Pop -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="category.html?genre=pop&sub=synth-pop">Synth-Pop</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=pop&sub=dance-pop">Dance-Pop</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=pop&sub=indie-pop">Indie Pop</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item fw-semibold" href="category.html?genre=pop">View All Pop</a></li>
+          </ul>
+        </li>
+        <!-- Rap -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rap</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="category.html?genre=rap&sub=east-coast-rap">East Coast Rap</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=rap&sub=west-coast-rap">West Coast Rap</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=rap&sub=trap">Trap</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item fw-semibold" href="category.html?genre=rap">View All Rap</a></li>
+          </ul>
+        </li>
+        <!-- Classical -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Classical</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="category.html?genre=classical&sub=baroque">Baroque</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=classical&sub=romantic">Romantic</a></li>
+            <li><a class="dropdown-item" href="category.html?genre=classical&sub=contemporary-classical">Contemporary</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item fw-semibold" href="category.html?genre=classical">View All Classical</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="search.html?filter=new">New Releases</a></li>
+        <li class="nav-item"><a class="nav-link" href="search.html?filter=best">Best of Year</a></li>
+        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+      </ul>
+      <!-- Search -->
+      <form class="navbar-search me-3" id="navbar-search-form">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="navbar-search-input" placeholder="Search artists, albums..." autocomplete="off">
+      </form>
+      <!-- Auth -->
+      <div class="navbar-auth d-flex align-items-center gap-2">
+        <button class="btn-auth" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal">
+          <i class="fas fa-user me-1"></i> Sign In
+        </button>
+        <div class="d-none d-flex align-items-center gap-2" id="nav-user-info">
+          <span class="nav-username" id="nav-username"></span>
+          <button class="btn-logout" onclick="Auth.logout()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

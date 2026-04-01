@@ -4,9 +4,9 @@
 ═══════════════════════════════════════════════════════════ */
 :root {
   /* ── Brand Colors ─────────────────────────────────────── */
-  --color-primary:        #1565C0;
-  --color-primary-light:  #1E88E5;
-  --color-primary-dark:   #0D47A1;
+  --color-primary:        #2631ccd7;
+  --color-primary-light:  #5a1ee5ea;
+  --color-primary-dark:   #0d52a1;
   --color-accent:         #42A5F5;
   --color-accent-warm:    #64B5F6;
 

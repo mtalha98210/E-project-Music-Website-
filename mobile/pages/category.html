@@ -17,204 +17,147 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
-  <div id="splash-screen"><div class="splash__logo">Music<span>World</span></div><div class="splash__ring-wrap"><div class="splash__pulse"></div><i class="fas fa-music splash__icon"></i></div></div>
-  <div id="navbar-placeholder"></div>
 
-  <!-- Auth Modal -->
-  <div class="modal fade" id="auth-modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content border-0 shadow-lg">
-      <div class="modal-header border-0 pb-0" style="background:var(--color-primary);border-radius:10px 10px 0 0;"><h5 class="modal-title text-white fw-bold"><i class="fas fa-music me-2"></i>MusicWorld</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body p-4">
-        <div id="auth-prompt-msg" class="d-none alert alert-info py-2 small mb-3"></div>
-        <ul class="nav nav-tabs mb-4"><li class="nav-item"><button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane">Sign In</button></li><li class="nav-item"><button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-pane">Register</button></li></ul>
-        <div class="tab-content">
-          <div class="tab-pane fade show active" id="login-pane"><div id="login-error" class="alert alert-danger d-none py-2 small"></div><form id="login-form"><div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="login-email" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="login-password" class="form-control" required></div><button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Sign In</button></form></div>
-          <div class="tab-pane fade" id="register-pane"><div id="register-error" class="alert alert-danger d-none py-2 small"></div><form id="register-form"><div class="mb-3"><label class="form-label small fw-semibold">Username</label><input type="text" id="reg-username" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="reg-email" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="reg-password" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Confirm Password</label><input type="password" id="reg-confirm" class="form-control" required></div><button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Create Account</button></form></div>
-        </div>
+<div id="splash-screen"><div class="splash__logo">Music<span>World</span></div><div class="splash__ring-wrap"><div class="splash__pulse"></div><i class="fas fa-music splash__icon"></i></div></div>
+
+<!-- NAVBAR -->
+<nav class="mw-navbar navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Music<span>World</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rock</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=rock&sub=classic-rock">Classic Rock</a></li><li><a class="dropdown-item" href="category.html?genre=rock&sub=hard-rock">Hard Rock</a></li><li><a class="dropdown-item" href="category.html?genre=rock&sub=alternative-rock">Alternative Rock</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="category.html?genre=rock">View All Rock</a></li></ul></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Jazz</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=jazz&sub=bebop">Bebop</a></li><li><a class="dropdown-item" href="category.html?genre=jazz&sub=smooth-jazz">Smooth Jazz</a></li><li><a class="dropdown-item" href="category.html?genre=jazz&sub=fusion-jazz">Fusion Jazz</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="category.html?genre=jazz">View All Jazz</a></li></ul></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=pop&sub=synth-pop">Synth-Pop</a></li><li><a class="dropdown-item" href="category.html?genre=pop&sub=dance-pop">Dance-Pop</a></li><li><a class="dropdown-item" href="category.html?genre=pop&sub=indie-pop">Indie Pop</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="category.html?genre=pop">View All Pop</a></li></ul></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rap</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=rap&sub=east-coast-rap">East Coast</a></li><li><a class="dropdown-item" href="category.html?genre=rap&sub=west-coast-rap">West Coast</a></li><li><a class="dropdown-item" href="category.html?genre=rap&sub=trap">Trap</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="category.html?genre=rap">View All Rap</a></li></ul></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Classical</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=classical&sub=baroque">Baroque</a></li><li><a class="dropdown-item" href="category.html?genre=classical&sub=romantic">Romantic</a></li><li><a class="dropdown-item" href="category.html?genre=classical&sub=contemporary-classical">Contemporary</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="category.html?genre=classical">View All Classical</a></li></ul></li>
+        <li class="nav-item"><a class="nav-link" href="search.html?filter=new">New Releases</a></li>
+        <li class="nav-item"><a class="nav-link" href="search.html?filter=best">Best of Year</a></li>
+        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+      </ul>
+      <form class="navbar-search me-3" id="navbar-search-form"><i class="fas fa-search search-icon"></i><input type="text" id="navbar-search-input" placeholder="Search artists, albums..." autocomplete="off"></form>
+      <div class="navbar-auth d-flex align-items-center gap-2">
+        <button class="btn-auth" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal"><i class="fas fa-user me-1"></i>Sign In</button>
+        <div class="d-none align-items-center gap-2" id="nav-user-info"><span class="nav-username" id="nav-username"></span><button class="btn-logout" onclick="Auth.logout()">Sign Out</button></div>
       </div>
-    </div></div>
+    </div>
   </div>
-  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100"><div id="download-toast" class="toast align-items-center text-bg-primary border-0"><div class="d-flex"><div class="toast-body"><i class="fas fa-download me-2"></i>Downloading album...</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div></div></div>
+</nav>
 
-  <!-- Category Hero -->
-  <section class="category-hero" id="category-hero">
-    <div class="category-hero__img-bg" id="category-hero-bg"></div>
-    <div class="category-hero__overlay"></div>
-    <div class="container" style="position:relative;z-index:2">
-      <nav aria-label="breadcrumb" class="mb-3">
-        <ol class="breadcrumb" style="--bs-breadcrumb-divider-color:rgba(255,255,255,0.5)">
-          <li class="breadcrumb-item"><a href="../index.html" class="text-white-50 text-decoration-none">Home</a></li>
-          <li class="breadcrumb-item active text-white" id="breadcrumb-genre">Genre</li>
-        </ol>
-      </nav>
-      <h1 class="category-hero__title" id="category-title">Loading...</h1>
-      <p class="category-hero__desc" id="category-desc"></p>
+<!-- AUTH MODAL -->
+<div class="modal fade" id="auth-modal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content border-0 shadow-lg"><div class="modal-header border-0 pb-0" style="background:var(--color-primary);border-radius:10px 10px 0 0;"><h5 class="modal-title text-white fw-bold"><i class="fas fa-music me-2"></i>MusicWorld</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div id="auth-prompt-msg" class="d-none alert alert-info py-2 small mb-3"></div><ul class="nav nav-tabs mb-4"><li class="nav-item"><button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane">Sign In</button></li><li class="nav-item"><button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-pane">Register</button></li></ul><div class="tab-content"><div class="tab-pane fade show active" id="login-pane"><div id="login-error" class="alert alert-danger d-none py-2 small"></div><form id="login-form"><div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="login-email" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="login-password" class="form-control" required></div><button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Sign In</button></form></div><div class="tab-pane fade" id="register-pane"><div id="register-error" class="alert alert-danger d-none py-2 small"></div><form id="register-form"><div class="mb-3"><label class="form-label small fw-semibold">Username</label><input type="text" id="reg-username" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="reg-email" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="reg-password" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Confirm Password</label><input type="password" id="reg-confirm" class="form-control" required></div><button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Create Account</button></form></div></div></div></div></div></div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100"><div id="download-toast" class="toast align-items-center text-bg-primary border-0"><div class="d-flex"><div class="toast-body"><i class="fas fa-download me-2"></i>Downloading album...</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div></div></div>
+
+<!-- CATEGORY HERO -->
+<section class="category-hero" id="category-hero">
+  <div class="category-hero__img-bg" id="category-hero-bg"></div>
+  <div class="category-hero__overlay"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html" class="text-white-50 text-decoration-none">Home</a></li><li class="breadcrumb-item active text-white" id="breadcrumb-genre">Genre</li></ol></nav>
+    <h1 class="category-hero__title" id="category-title">Loading...</h1>
+    <p class="category-hero__desc" id="category-desc"></p>
+  </div>
+</section>
+
+<main class="container py-4">
+  <div class="subcategory-tabs" id="subcategory-tabs"></div>
+
+  <section class="mb-5" data-animate>
+    <div class="section-header"><h2 class="section-title mb-0">Artists</h2></div>
+    <div class="swiper" id="slider-category-artists">
+      <div class="swiper-wrapper" id="artists-wrapper"></div>
+      <div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
-  <main class="container py-4">
-    <div class="subcategory-tabs" id="subcategory-tabs"></div>
+  <section class="mb-5" data-animate>
+    <h2 class="section-title">Albums</h2>
+    <div class="row g-3" id="albums-grid"></div>
+  </section>
 
-    <section class="mb-5" data-animate>
-      <div class="section-header"><h2 class="section-title mb-0">Artists</h2></div>
-      <div class="swiper" id="slider-category-artists">
-        <div class="swiper-wrapper" id="artists-wrapper"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
+  <section class="mb-5" data-animate>
+    <h2 class="section-title">Instruments</h2>
+    <div class="instruments-grid" id="instruments-grid"></div>
+  </section>
 
-    <section class="mb-5" data-animate>
-      <h2 class="section-title">Albums</h2>
-      <div class="row g-3" id="albums-grid"></div>
-    </section>
+  <section class="mb-5" data-animate>
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="events-list" id="events-list"></div>
+  </section>
+</main>
 
-    <section class="mb-5" data-animate>
-      <h2 class="section-title">Instruments</h2>
-      <div class="instruments-grid" id="instruments-grid"></div>
-    </section>
+<!-- FOOTER -->
+<footer class="mw-footer"><div class="container"><div class="row g-4"><div class="col-lg-4"><div class="footer__brand">Music<span>World</span></div><p class="footer__tagline">Your complete guide to the world of music.</p></div><div class="col-lg-2 col-6"><h6 class="footer__heading">Genres</h6><ul class="footer__links"><li><a href="category.html?genre=rock">Rock</a></li><li><a href="category.html?genre=jazz">Jazz</a></li><li><a href="category.html?genre=pop">Pop</a></li><li><a href="category.html?genre=rap">Rap</a></li><li><a href="category.html?genre=classical">Classical</a></li></ul></div><div class="col-lg-2 col-6"><h6 class="footer__heading">Discover</h6><ul class="footer__links"><li><a href="search.html?filter=new">New Releases</a></li><li><a href="search.html?filter=best">Best of Year</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="articles.html">Articles</a></li></ul></div><div class="col-lg-4"><h6 class="footer__heading">Stay Connected</h6><div class="footer__social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 MusicWorld. All rights reserved.</p></div></div></footer>
 
-    <section class="mb-5" data-animate>
-      <h2 class="section-title">Upcoming Events</h2>
-      <div class="events-list" id="events-list"></div>
-    </section>
-  </main>
+<!-- PLAYER -->
+<div id="music-player"><img id="player-art" class="player__art" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=80&q=60" alt="Now Playing"><div class="player__info"><div class="player__title" id="player-title">Select a track</div><div class="player__artist" id="player-artist">—</div></div><div class="player__controls"><button id="player-prev-btn"><i class="fas fa-backward-step"></i></button><button id="player-play-btn"><i class="fas fa-play"></i></button><button id="player-next-btn"><i class="fas fa-forward-step"></i></button></div><div class="player__volume"><i class="fas fa-volume-low"></i><input type="range" id="player-volume" min="0" max="1" step="0.05" value="0.8"></div></div>
 
-  <div id="footer-placeholder"></div>
+<script src="../js/data/music-data.js"></script>
+<script src="../js/data/articles-data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/player.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/splash.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/main.js"></script>
+<script>
+var GENRE_IMGS={rock:'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=1200&q=80',jazz:'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=1200&q=80',pop:'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80',rap:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80',classical:'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1200&q=80'};
+var ALBUM_IMGS=['https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80','https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80','https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&q=80','https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80','https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=400&q=80','https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=400&q=80'];
+var instrumentsMap={rock:[{icon:'fa-guitar',name:'Electric Guitar'},{icon:'fa-drum',name:'Drums'},{icon:'fa-music',name:'Bass Guitar'},{icon:'fa-microphone',name:'Vocals'}],jazz:[{icon:'fa-music',name:'Trumpet'},{icon:'fa-music',name:'Saxophone'},{icon:'fa-music',name:'Double Bass'},{icon:'fa-drum',name:'Drums'}],pop:[{icon:'fa-music',name:'Synthesizer'},{icon:'fa-microphone',name:'Vocals'},{icon:'fa-guitar',name:'Guitar'},{icon:'fa-music',name:'Keyboard'}],rap:[{icon:'fa-music',name:'Turntable'},{icon:'fa-microphone',name:'Microphone'},{icon:'fa-drum',name:'808 Drum Machine'},{icon:'fa-music',name:'Sampler'}],classical:[{icon:'fa-music',name:'Violin'},{icon:'fa-music',name:'Piano'},{icon:'fa-music',name:'Cello'},{icon:'fa-music',name:'Flute'}]};
+var eventsMap={rock:[{date:'Jun 15',name:'Rock Legends Festival',venue:'Madison Square Garden, NYC'},{date:'Jul 22',name:'Classic Rock Night',venue:'Hollywood Bowl, LA'}],jazz:[{date:'Jul 4',name:'International Jazz Festival',venue:'New Orleans, LA'},{date:'Aug 10',name:'Jazz at Lincoln Center',venue:'New York, NY'}],pop:[{date:'May 30',name:'Pop Music Awards 2026',venue:'Staples Center, LA'},{date:'Sep 5',name:'Summer Pop Fest',venue:'Hyde Park, London'}],rap:[{date:'Jun 28',name:'Hip-Hop Summit 2026',venue:'Barclays Center, NYC'},{date:'Aug 18',name:'Rap Battle Championship',venue:'Atlanta, GA'}],classical:[{date:'Jul 14',name:'Vienna Philharmonic Tour',venue:'Carnegie Hall, NYC'},{date:'Sep 20',name:'Classical Music Gala',venue:'Royal Albert Hall, London'}]};
 
-  <div id="music-player">
-    <img id="player-art" class="player__art" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=80&q=60" alt="Now Playing">
-    <div class="player__info"><div class="player__title" id="player-title">Select a track</div><div class="player__artist" id="player-artist">—</div></div>
-    <div class="player__controls">
-      <button id="player-prev-btn"><i class="fas fa-backward-step"></i></button>
-      <button id="player-play-btn"><i class="fas fa-play"></i></button>
-      <button id="player-next-btn"><i class="fas fa-forward-step"></i></button>
-    </div>
-    <div class="player__volume"><i class="fas fa-volume-low"></i><input type="range" id="player-volume" min="0" max="1" step="0.05" value="0.8"></div>
-  </div>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var genreId=params.get('genre')||'rock';
+  var subId=params.get('sub')||null;
 
-  <script src="../js/data/music-data.js"></script>
-  <script src="../js/data/articles-data.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="../js/auth.js"></script>
-  <script src="../js/player.js"></script>
-  <script src="../js/animations.js"></script>
-  <script src="../js/slider.js"></script>
-  <script src="../js/splash.js"></script>
-  <script src="../js/search.js"></script>
-  <script>
-  var GENRE_IMGS = {
-    rock:      'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=1200&q=80',
-    jazz:      'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=1200&q=80',
-    pop:       'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80',
-    rap:       'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80',
-    classical: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1200&q=80'
-  };
-  var ALBUM_IMGS = [
-    'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80',
-    'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80',
-    'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&q=80',
-    'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80',
-    'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=400&q=80',
-    'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=400&q=80'
-  ];
+  document.addEventListener('DOMContentLoaded',function(){
+    Auth.updateNavbar();
+    document.getElementById('navbar-search-form').addEventListener('submit',function(e){e.preventDefault();var q=document.getElementById('navbar-search-input');if(q&&q.value.trim())window.location.href='search.html?q='+encodeURIComponent(q.value.trim());});
 
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    var genreId = params.get('genre') || 'rock';
-    var subId   = params.get('sub') || null;
+    var genre=(MusicData.genres||[]).find(function(g){return g.id===genreId;});
+    if(!genre) return;
+    document.title=genre.name+' - MusicWorld';
+    document.getElementById('category-title').textContent=genre.name;
+    document.getElementById('category-desc').textContent=genre.description;
+    document.getElementById('breadcrumb-genre').textContent=genre.name;
+    var bg=document.getElementById('category-hero-bg');
+    if(bg) bg.style.backgroundImage='url('+(GENRE_IMGS[genreId]||GENRE_IMGS.rock)+')';
 
-    var instrumentsMap = {
-      rock:      [{icon:'fa-guitar',name:'Electric Guitar'},{icon:'fa-drum',name:'Drums'},{icon:'fa-music',name:'Bass Guitar'},{icon:'fa-microphone',name:'Vocals'}],
-      jazz:      [{icon:'fa-music',name:'Trumpet'},{icon:'fa-music',name:'Saxophone'},{icon:'fa-music',name:'Double Bass'},{icon:'fa-drum',name:'Drums'}],
-      pop:       [{icon:'fa-music',name:'Synthesizer'},{icon:'fa-microphone',name:'Vocals'},{icon:'fa-guitar',name:'Guitar'},{icon:'fa-music',name:'Keyboard'}],
-      rap:       [{icon:'fa-music',name:'Turntable'},{icon:'fa-microphone',name:'Microphone'},{icon:'fa-drum',name:'808 Drum Machine'},{icon:'fa-music',name:'Sampler'}],
-      classical: [{icon:'fa-music',name:'Violin'},{icon:'fa-music',name:'Piano'},{icon:'fa-music',name:'Cello'},{icon:'fa-music',name:'Flute'}]
-    };
-    var eventsMap = {
-      rock:      [{date:'Jun 15',name:'Rock Legends Festival',venue:'Madison Square Garden, NYC'},{date:'Jul 22',name:'Classic Rock Night',venue:'Hollywood Bowl, LA'}],
-      jazz:      [{date:'Jul 4',name:'International Jazz Festival',venue:'New Orleans, LA'},{date:'Aug 10',name:'Jazz at Lincoln Center',venue:'New York, NY'}],
-      pop:       [{date:'May 30',name:'Pop Music Awards 2026',venue:'Staples Center, LA'},{date:'Sep 5',name:'Summer Pop Fest',venue:'Hyde Park, London'}],
-      rap:       [{date:'Jun 28',name:'Hip-Hop Summit 2026',venue:'Barclays Center, NYC'},{date:'Aug 18',name:'Rap Battle Championship',venue:'Atlanta, GA'}],
-      classical: [{date:'Jul 14',name:'Vienna Philharmonic Tour',venue:'Carnegie Hall, NYC'},{date:'Sep 20',name:'Classical Music Gala',venue:'Royal Albert Hall, London'}]
-    };
+    var subs=(MusicData.subcategories||[]).filter(function(s){return s.genreId===genreId;});
+    var tabsEl=document.getElementById('subcategory-tabs');
+    var allBtn=document.createElement('button');
+    allBtn.className='subcategory-tab'+(!subId?' active':'');
+    allBtn.textContent='All '+genre.name;
+    allBtn.onclick=function(){window.location.href='category.html?genre='+genreId;};
+    tabsEl.appendChild(allBtn);
+    subs.forEach(function(s){var btn=document.createElement('button');btn.className='subcategory-tab'+(subId===s.id?' active':'');btn.textContent=s.name;btn.onclick=function(){window.location.href='category.html?genre='+genreId+'&sub='+s.id;};tabsEl.appendChild(btn);});
 
-    document.addEventListener('DOMContentLoaded', async function() {
-      await fetch('../pages/navbar.html').then(r=>r.text()).then(h=>{
-        document.getElementById('navbar-placeholder').innerHTML=h;
-        Auth.updateNavbar();
-        var sf=document.getElementById('navbar-search-form');
-        if(sf) sf.addEventListener('submit',function(e){e.preventDefault();var q=document.getElementById('navbar-search-input');if(q&&q.value.trim())window.location.href='search.html?q='+encodeURIComponent(q.value.trim());});
-      });
-      await fetch('../pages/footer.html').then(r=>r.text()).then(h=>{document.getElementById('footer-placeholder').innerHTML=h;});
+    var artists=(MusicData.artists||[]).filter(function(a){if(subId)return a.subcategoryIds&&a.subcategoryIds.includes(subId);return a.genreIds&&a.genreIds.includes(genreId);});
+    var aw=document.getElementById('artists-wrapper');
+    artists.forEach(function(a,i){var img=GENRE_IMGS[genreId]||ALBUM_IMGS[i%ALBUM_IMGS.length];aw.innerHTML+='<div class="swiper-slide" style="width:200px"><a href="artist.html?id='+a.id+'" class="text-decoration-none"><div class="mw-card"><div class="mw-card__img"><img src="'+img+'" alt="'+a.name+'" loading="lazy"><div class="mw-card__overlay"><button class="btn-play"><i class="fas fa-user"></i></button></div></div><div class="mw-card__body"><p class="mw-card__title">'+a.name+'</p><p class="mw-card__meta">'+a.origin+'</p></div></div></a></div>';});
 
-      var genre = (MusicData.genres||[]).find(function(g){return g.id===genreId;});
-      if (!genre) return;
+    var albums=(MusicData.albums||[]).filter(function(al){if(subId){var ar=(MusicData.artists||[]).find(function(a){return a.id===al.artistId;});return ar&&ar.subcategoryIds&&ar.subcategoryIds.includes(subId);}return al.genreIds&&al.genreIds.includes(genreId);});
+    var ag=document.getElementById('albums-grid');
+    albums.forEach(function(al,i){var ar=(MusicData.artists||[]).find(function(a){return a.id===al.artistId;});var img=ALBUM_IMGS[i%ALBUM_IMGS.length];var badge=al.isNewRelease?'<span class="mw-badge mw-badge--new" style="position:absolute;top:8px;left:8px;z-index:2">New</span>':al.isBestOfYear?'<span class="mw-badge mw-badge--best" style="position:absolute;top:8px;left:8px;z-index:2">Best</span>':'';ag.innerHTML+='<div class="col-6 col-md-3" data-animate><a href="album.html?id='+al.id+'" class="text-decoration-none"><div class="mw-card"><div class="mw-card__img">'+badge+'<img src="'+img+'" alt="'+al.title+'" loading="lazy"><div class="mw-card__overlay"><button class="btn-play" data-play="'+al.id+'" data-title="'+al.title+'" data-artist="'+(ar?ar.name:'')+'" data-cover="'+img+'"><i class="fas fa-play"></i></button></div></div><div class="mw-card__body"><p class="mw-card__title">'+al.title+'</p><p class="mw-card__meta">'+(ar?ar.name:'')+' &middot; '+al.releaseDate.slice(0,4)+'</p></div></div></a></div>';});
 
-      document.title = genre.name + ' - MusicWorld';
-      document.getElementById('category-title').textContent = genre.name;
-      document.getElementById('category-desc').textContent  = genre.description;
-      document.getElementById('breadcrumb-genre').textContent = genre.name;
+    var insts=instrumentsMap[genreId]||[];
+    var ig=document.getElementById('instruments-grid');
+    insts.forEach(function(inst){ig.innerHTML+='<div class="instrument-card" data-animate><i class="fas '+inst.icon+'"></i><p>'+inst.name+'</p></div>';});
 
-      // Hero background
-      var heroBg = document.getElementById('category-hero-bg');
-      if (heroBg) heroBg.style.backgroundImage = 'url(' + (GENRE_IMGS[genreId]||GENRE_IMGS.rock) + ')';
+    var events=eventsMap[genreId]||[];
+    var evEl=document.getElementById('events-list');
+    events.forEach(function(ev){evEl.innerHTML+='<div class="event-card" data-animate><div class="event-card__date">'+ev.date+'</div><div class="event-card__info"><h5>'+ev.name+'</h5><p><i class="fas fa-location-dot me-1"></i>'+ev.venue+'</p></div></div>';});
 
-      // Subcategory tabs
-      var subs = (MusicData.subcategories||[]).filter(function(s){return s.genreId===genreId;});
-      var tabsEl = document.getElementById('subcategory-tabs');
-      var allBtn = document.createElement('button');
-      allBtn.className = 'subcategory-tab' + (!subId?' active':'');
-      allBtn.textContent = 'All ' + genre.name;
-      allBtn.onclick = function(){window.location.href='category.html?genre='+genreId;};
-      tabsEl.appendChild(allBtn);
-      subs.forEach(function(s){
-        var btn = document.createElement('button');
-        btn.className = 'subcategory-tab' + (subId===s.id?' active':'');
-        btn.textContent = s.name;
-        btn.onclick = function(){window.location.href='category.html?genre='+genreId+'&sub='+s.id;};
-        tabsEl.appendChild(btn);
-      });
-
-      // Artists
-      var artists = (MusicData.artists||[]).filter(function(a){
-        if(subId) return a.subcategoryIds&&a.subcategoryIds.includes(subId);
-        return a.genreIds&&a.genreIds.includes(genreId);
-      });
-      var aw = document.getElementById('artists-wrapper');
-      artists.forEach(function(a, i){
-        var img = GENRE_IMGS[genreId] || ALBUM_IMGS[i % ALBUM_IMGS.length];
-        aw.innerHTML += '<div class="swiper-slide" style="width:200px"><a href="artist.html?id='+a.id+'" class="text-decoration-none"><div class="mw-card" data-animate><div class="mw-card__img"><img src="'+img+'" alt="'+a.name+'" loading="lazy"><div class="mw-card__overlay"><button class="btn-play"><i class="fas fa-user"></i></button></div></div><div class="mw-card__body"><p class="mw-card__title">'+a.name+'</p><p class="mw-card__meta">'+a.origin+'</p></div></div></a></div>';
-      });
-
-      // Albums
-      var albums = (MusicData.albums||[]).filter(function(al){
-        if(subId){var ar=(MusicData.artists||[]).find(function(a){return a.id===al.artistId;});return ar&&ar.subcategoryIds&&ar.subcategoryIds.includes(subId);}
-        return al.genreIds&&al.genreIds.includes(genreId);
-      });
-      var ag = document.getElementById('albums-grid');
-      albums.forEach(function(al, i){
-        var ar=(MusicData.artists||[]).find(function(a){return a.id===al.artistId;});
-        var img = ALBUM_IMGS[i % ALBUM_IMGS.length];
-        var badge = al.isNewRelease ? '<span class="mw-badge mw-badge--new" style="position:absolute;top:8px;left:8px;z-index:2">New</span>' : al.isBestOfYear ? '<span class="mw-badge mw-badge--best" style="position:absolute;top:8px;left:8px;z-index:2">Best</span>' : '';
-        ag.innerHTML += '<div class="col-6 col-md-3" data-animate><a href="album.html?id='+al.id+'" class="text-decoration-none"><div class="mw-card"><div class="mw-card__img">'+badge+'<img src="'+img+'" alt="'+al.title+'" loading="lazy"><div class="mw-card__overlay"><button class="btn-play" data-play="'+al.id+'" data-title="'+al.title+'" data-artist="'+(ar?ar.name:'')+'" data-cover="'+img+'"><i class="fas fa-play"></i></button></div></div><div class="mw-card__body"><p class="mw-card__title">'+al.title+'</p><p class="mw-card__meta">'+(ar?ar.name:'')+' &middot; '+al.releaseDate.slice(0,4)+'</p></div></div></a></div>';
-      });
-
-      // Instruments
-      var insts = instrumentsMap[genreId]||[];
-      var ig = document.getElementById('instruments-grid');
-      insts.forEach(function(inst){ig.innerHTML+='<div class="instrument-card" data-animate><i class="fas '+inst.icon+'"></i><p>'+inst.name+'</p></div>';});
-
-      // Events
-      var events = eventsMap[genreId]||[];
-      var evEl = document.getElementById('events-list');
-      events.forEach(function(ev){evEl.innerHTML+='<div class="event-card" data-animate><div class="event-card__date">'+ev.date+'</div><div class="event-card__info"><h5>'+ev.name+'</h5><p><i class="fas fa-location-dot me-1"></i>'+ev.venue+'</p></div></div>';});
-
-      if(window.MWSlider) MWSlider.initAll();
-    });
-  })();
-  </script>
+    if(window.MWSlider) MWSlider.initAll();
+  });
+})();
+</script>
 </body>
 </html>

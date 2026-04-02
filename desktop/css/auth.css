@@ -1,67 +1,116 @@
-/* Auth Modal */
+/* ═══════════════════════════════════════════════
+   AUTH MODAL — Clean professional design
+═══════════════════════════════════════════════ */
+#auth-modal .modal-content {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(13,71,161,0.25);
+}
+
+/* Header with gradient */
 #auth-modal .modal-header {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
   border-bottom: none;
+  padding: 1.5rem 1.75rem 1.25rem;
+  position: relative;
+}
+#auth-modal .modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
 }
 
 #auth-modal .modal-title {
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.2rem;
   color: var(--color-white);
+  letter-spacing: -0.3px;
 }
+#auth-modal .modal-title i { opacity: 0.9; }
+#auth-modal .btn-close { filter: invert(1) opacity(0.8); }
 
-#auth-modal .btn-close {
-  filter: invert(1);
-}
+/* Body */
+#auth-modal .modal-body { padding: 1.75rem; }
 
+/* Tabs */
 #auth-modal .nav-tabs {
-  border-bottom: 1px solid var(--color-border);
+  border: none;
+  background: var(--color-gray-100);
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 1.5rem;
 }
-
 #auth-modal .nav-tabs .nav-link {
   color: var(--color-text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.875rem;
   border: none;
-  border-bottom: 2px solid transparent;
-  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  transition: all var(--transition-fast);
+  flex: 1;
+  text-align: center;
 }
-
 #auth-modal .nav-tabs .nav-link.active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
-  background: none;
+  color: var(--color-primary-dark);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(21,101,192,0.12);
 }
 
+/* Form controls */
+#auth-modal .form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
 #auth-modal .form-control {
-  border-color: var(--color-border);
-  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
   font-size: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  transition: all var(--transition-fast);
+  background: var(--color-off-white);
 }
-
 #auth-modal .form-control:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+  outline: none;
 }
 
+/* Submit button */
 #auth-modal .btn-primary {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  border-radius: var(--radius-pill);
-  font-weight: 600;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.7rem;
+  letter-spacing: 0.3px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(21,101,192,0.3);
+  margin-top: 0.5rem;
 }
-
 #auth-modal .btn-primary:hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(21,101,192,0.4);
 }
 
+/* Prompt message */
 #auth-prompt-msg {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--color-primary);
-  background: var(--color-off-white);
-  border-radius: var(--radius-sm);
-  padding: var(--space-sm) var(--space-md);
-  margin-bottom: var(--space-md);
+  background: rgba(21,101,192,0.08);
+  border: 1px solid rgba(21,101,192,0.2);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
 }

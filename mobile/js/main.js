@@ -100,7 +100,12 @@
   }
 
   function updateNavbarAuth() {
-    if (window.Auth) Auth.updateNavbar();
+    if (window.Auth) {
+      Auth.updateNavbar();
+      // Hide register link when logged in
+      var regLink = document.getElementById('nav-register-link');
+      if (regLink) regLink.style.display = Auth.isLoggedIn() ? 'none' : '';
+    }
   }
 
   document.addEventListener('DOMContentLoaded', function() {

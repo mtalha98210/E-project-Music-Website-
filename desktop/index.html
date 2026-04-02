@@ -26,40 +26,38 @@
 
 <!-- ═══ NAVBAR (inlined) ═══ -->
 <nav class="mw-navbar navbar navbar-expand-lg">
-  <div class="container-fluid">
+  <div class="container-fluid px-4">
     <a class="navbar-brand" href="index.html">Music<span>World</span></a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rock</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="pages/category.html?genre=rock&sub=classic-rock">Classic Rock</a></li><li><a class="dropdown-item" href="pages/category.html?genre=rock&sub=hard-rock">Hard Rock</a></li><li><a class="dropdown-item" href="pages/category.html?genre=rock&sub=alternative-rock">Alternative Rock</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="pages/category.html?genre=rock">View All Rock</a></li></ul>
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Jazz</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="pages/category.html?genre=jazz&sub=bebop">Bebop</a></li><li><a class="dropdown-item" href="pages/category.html?genre=jazz&sub=smooth-jazz">Smooth Jazz</a></li><li><a class="dropdown-item" href="pages/category.html?genre=jazz&sub=fusion-jazz">Fusion Jazz</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="pages/category.html?genre=jazz">View All Jazz</a></li></ul>
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pop</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="pages/category.html?genre=pop&sub=synth-pop">Synth-Pop</a></li><li><a class="dropdown-item" href="pages/category.html?genre=pop&sub=dance-pop">Dance-Pop</a></li><li><a class="dropdown-item" href="pages/category.html?genre=pop&sub=indie-pop">Indie Pop</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="pages/category.html?genre=pop">View All Pop</a></li></ul>
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rap</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="pages/category.html?genre=rap&sub=east-coast-rap">East Coast</a></li><li><a class="dropdown-item" href="pages/category.html?genre=rap&sub=west-coast-rap">West Coast</a></li><li><a class="dropdown-item" href="pages/category.html?genre=rap&sub=trap">Trap</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="pages/category.html?genre=rap">View All Rap</a></li></ul>
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Classical</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="pages/category.html?genre=classical&sub=baroque">Baroque</a></li><li><a class="dropdown-item" href="pages/category.html?genre=classical&sub=romantic">Romantic</a></li><li><a class="dropdown-item" href="pages/category.html?genre=classical&sub=contemporary-classical">Contemporary</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item fw-semibold" href="pages/category.html?genre=classical">View All Classical</a></li></ul>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Genres</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="pages/category.html?genre=rock"><i class="fas fa-guitar me-2 text-primary" style="width:16px"></i>Rock</a></li>
+            <li><a class="dropdown-item" href="pages/category.html?genre=jazz"><i class="fas fa-music me-2 text-primary" style="width:16px"></i>Jazz</a></li>
+            <li><a class="dropdown-item" href="pages/category.html?genre=pop"><i class="fas fa-star me-2 text-primary" style="width:16px"></i>Pop</a></li>
+            <li><a class="dropdown-item" href="pages/category.html?genre=rap"><i class="fas fa-microphone me-2 text-primary" style="width:16px"></i>Rap</a></li>
+            <li><a class="dropdown-item" href="pages/category.html?genre=classical"><i class="fas fa-music me-2 text-primary" style="width:16px"></i>Classical</a></li>
+          </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="pages/search.html?filter=new">New Releases</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/search.html?filter=best">Best of Year</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/reviews.html">Reviews</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/articles.html">Articles</a></li>
       </ul>
-      <form class="navbar-search me-3" id="navbar-search-form">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" id="navbar-search-input" placeholder="Search artists, albums..." autocomplete="off">
-      </form>
-      <div class="navbar-auth d-flex align-items-center gap-2">
-        <button class="btn-auth" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal"><i class="fas fa-user me-1"></i>Sign In</button>
-        <div class="d-none align-items-center gap-2" id="nav-user-info">
-          <span class="nav-username" id="nav-username"></span>
-          <button class="btn-logout" onclick="Auth.logout()">Sign Out</button>
+      <div class="d-flex align-items-center gap-3">
+        <form class="navbar-search" id="navbar-search-form">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="navbar-search-input" placeholder="Search music..." autocomplete="off">
+        </form>
+        <div class="navbar-auth d-flex align-items-center gap-2">
+          <button class="btn-auth" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal"><i class="fas fa-user me-1"></i>Sign In</button>
+          <a href="pages/auth.html" class="btn-auth ms-1" style="text-decoration:none;font-size:0.8rem;background:transparent;color:var(--color-primary);border:1px solid var(--color-border);padding:0.4rem 0.9rem" id="nav-register-link">Register</a>
+          <div class="d-none align-items-center gap-2" id="nav-user-info">
+            <span class="nav-username" id="nav-username"></span>
+            <button class="btn-logout" onclick="Auth.logout()">Sign Out</button>
+          </div>
         </div>
       </div>
     </div>
@@ -68,35 +66,35 @@
 
 <!-- ═══ AUTH MODAL ═══ -->
 <div class="modal fade" id="auth-modal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg">
-      <div class="modal-header border-0 pb-0" style="background:var(--color-primary);border-radius:10px 10px 0 0;">
-        <h5 class="modal-title text-white fw-bold"><i class="fas fa-music me-2"></i>MusicWorld</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <div class="modal-dialog modal-dialog-centered" style="max-width:420px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fas fa-headphones me-2"></i>MusicWorld</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body p-4">
-        <div id="auth-prompt-msg" class="d-none alert alert-info py-2 small mb-3"></div>
-        <ul class="nav nav-tabs mb-4">
-          <li class="nav-item"><button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane">Sign In</button></li>
-          <li class="nav-item"><button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-pane">Register</button></li>
+      <div class="modal-body">
+        <div id="auth-prompt-msg" class="d-none"></div>
+        <ul class="nav nav-tabs" id="authTabs" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane" role="tab">Sign In</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-pane" role="tab">Create Account</button></li>
         </ul>
-        <div class="tab-content">
-          <div class="tab-pane fade show active" id="login-pane">
-            <div id="login-error" class="alert alert-danger d-none py-2 small"></div>
+        <div class="tab-content mt-1">
+          <div class="tab-pane fade show active" id="login-pane" role="tabpanel">
+            <div id="login-error" class="alert alert-danger d-none py-2 small mb-3"></div>
             <form id="login-form">
-              <div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="login-email" class="form-control" placeholder="your@email.com" required></div>
-              <div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="login-password" class="form-control" placeholder="Password" required></div>
-              <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Sign In</button>
+              <div class="mb-3"><label class="form-label">Email</label><input type="email" id="login-email" class="form-control" placeholder="your@email.com" required></div>
+              <div class="mb-3"><label class="form-label">Password</label><input type="password" id="login-password" class="form-control" placeholder="Enter password" required></div>
+              <button type="submit" class="btn btn-primary">Sign In</button>
             </form>
           </div>
-          <div class="tab-pane fade" id="register-pane">
-            <div id="register-error" class="alert alert-danger d-none py-2 small"></div>
+          <div class="tab-pane fade" id="register-pane" role="tabpanel">
+            <div id="register-error" class="alert alert-danger d-none py-2 small mb-3"></div>
             <form id="register-form">
-              <div class="mb-3"><label class="form-label small fw-semibold">Username</label><input type="text" id="reg-username" class="form-control" placeholder="Your name" required></div>
-              <div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="reg-email" class="form-control" placeholder="your@email.com" required></div>
-              <div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="reg-password" class="form-control" placeholder="Min 6 characters" required></div>
-              <div class="mb-3"><label class="form-label small fw-semibold">Confirm Password</label><input type="password" id="reg-confirm" class="form-control" placeholder="Repeat password" required></div>
-              <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Create Account</button>
+              <div class="mb-3"><label class="form-label">Username</label><input type="text" id="reg-username" class="form-control" placeholder="Your name" required></div>
+              <div class="mb-3"><label class="form-label">Email</label><input type="email" id="reg-email" class="form-control" placeholder="your@email.com" required></div>
+              <div class="mb-3"><label class="form-label">Password</label><input type="password" id="reg-password" class="form-control" placeholder="Min 6 characters" required></div>
+              <div class="mb-3"><label class="form-label">Confirm Password</label><input type="password" id="reg-confirm" class="form-control" placeholder="Repeat password" required></div>
+              <button type="submit" class="btn btn-primary">Create Account</button>
             </form>
           </div>
         </div>
@@ -104,7 +102,6 @@
     </div>
   </div>
 </div>
-
 <!-- Download Toast -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100">
   <div id="download-toast" class="toast align-items-center text-bg-primary border-0">

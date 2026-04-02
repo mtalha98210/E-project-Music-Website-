@@ -1,21 +1,21 @@
-/* ── Bootstrap overrides ───────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════
+   MusicWorld — Base Styles
+═══════════════════════════════════════════════════════════ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Bootstrap overrides */
 :root {
-  --bs-primary:     var(--color-primary);
-  --bs-primary-rgb: 21, 101, 192;
-  --bs-link-color:  var(--color-primary);
+  --bs-primary:       var(--color-primary);
+  --bs-primary-rgb:   21, 101, 192;
+  --bs-link-color:    var(--color-primary);
+  --bs-border-radius: var(--radius-sm);
+  --bs-font-sans-serif: var(--font-family-base);
 }
 
-/* ── Reset ─────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-img { max-width: 100%; display: block; }
-
-/* ── Body ──────────────────────────────────────────────────── */
-body {
-  font-family:      var(--font-family-base);
-  font-size:        var(--font-size-base);
-  line-height:      var(--line-height-base);
-  color:            var(--color-text);
-  background-color: var(--color-bg);
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { boolor-bg);
 }
 
 /* ── Typography ────────────────────────────────────────────── */

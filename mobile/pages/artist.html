@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Artist - MusicWorld</title>
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
@@ -14,68 +14,69 @@
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .artist-hero{min-height:200px;padding:var(--space-lg) 0;}
+    .artist-hero__img{width:90px;height:90px;}
+    .artist-hero__name{font-size:1.5rem;}
+    .albums-grid{grid-template-columns:repeat(2,1fr);}
+  </style>
 </head>
 <body>
 <div id="splash-screen"><div class="splash__logo">Music<span>World</span></div><div class="splash__ring-wrap"><div class="splash__pulse"></div><i class="fas fa-music splash__icon"></i></div></div>
 
-<nav class="mw-navbar navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="../index.html">Music<span>World</span></a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rock</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=rock">View All Rock</a></li></ul></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Jazz</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=jazz">View All Jazz</a></li></ul></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=pop">View All Pop</a></li></ul></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Rap</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=rap">View All Rap</a></li></ul></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Classical</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="category.html?genre=classical">View All Classical</a></li></ul></li>
-        <li class="nav-item"><a class="nav-link" href="search.html?filter=new">New Releases</a></li>
-        <li class="nav-item"><a class="nav-link" href="search.html?filter=best">Best of Year</a></li>
-        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
-      </ul>
-      <form class="navbar-search me-3" id="navbar-search-form"><i class="fas fa-search search-icon"></i><input type="text" id="navbar-search-input" placeholder="Search..." autocomplete="off"></form>
-      <div class="navbar-auth d-flex align-items-center gap-2">
-        <button class="btn-auth" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal"><i class="fas fa-user me-1"></i>Sign In</button>
-        <div class="d-none align-items-center gap-2" id="nav-user-info"><span class="nav-username" id="nav-username"></span><button class="btn-logout" onclick="Auth.logout()">Sign Out</button></div>
-      </div>
-    </div>
-  </div>
+<nav class="mw-navbar">
+  <a class="navbar-brand" href="../index.html">Music<span>World</span></a>
+  <button class="hamburger-btn" id="hamburger-btn"><i class="fas fa-bars"></i></button>
 </nav>
+<div class="nav-drawer-overlay" id="drawer-overlay"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer__header"><span class="nav-drawer__brand">Music<span>World</span></span><button class="nav-drawer__close" id="drawer-close"><i class="fas fa-times"></i></button></div>
+  <div class="nav-drawer__body">
+    <div style="padding:0.5rem 1rem"><form id="navbar-search-form" style="position:relative"><i class="fas fa-search" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--color-gray-600);font-size:0.8rem;"></i><input type="text" id="navbar-search-input" placeholder="Search..." style="width:100%;padding:0.5rem 0.75rem 0.5rem 2.2rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:0.875rem;background:var(--color-gray-100);"></form></div>
+    <p class="drawer-section-title">Genres</p>
+    <a href="category.html?genre=rock" class="drawer-link"><i class="fas fa-guitar"></i>Rock</a>
+    <a href="category.html?genre=jazz" class="drawer-link"><i class="fas fa-music"></i>Jazz</a>
+    <a href="category.html?genre=pop" class="drawer-link"><i class="fas fa-star"></i>Pop</a>
+    <a href="category.html?genre=rap" class="drawer-link"><i class="fas fa-microphone"></i>Rap</a>
+    <a href="category.html?genre=classical" class="drawer-link"><i class="fas fa-music"></i>Classical</a>
+    <p class="drawer-section-title">Discover</p>
+    <a href="search.html?filter=new" class="drawer-link"><i class="fas fa-fire"></i>New Releases</a>
+    <a href="search.html?filter=best" class="drawer-link"><i class="fas fa-trophy"></i>Best of Year</a>
+    <a href="reviews.html" class="drawer-link"><i class="fas fa-star"></i>Reviews</a>
+    <a href="articles.html" class="drawer-link"><i class="fas fa-newspaper"></i>Articles</a>
+  </div>
+  <div class="nav-drawer__footer">
+    <div id="nav-user-info" class="d-none mb-2 text-center"><span class="fw-semibold text-primary" id="nav-username"></span><button class="btn-logout ms-2" onclick="Auth.logout()" style="background:none;border:1px solid var(--color-border);border-radius:var(--radius-pill);padding:0.2rem 0.6rem;font-size:0.8rem;cursor:pointer;">Sign Out</button></div>
+    <button class="nav-drawer__auth-btn" id="nav-login-btn" data-bs-toggle="modal" data-bs-target="#auth-modal"><i class="fas fa-user me-2"></i>Sign In / Register</button>
+  </div>
+</div>
 
 <div class="modal fade" id="auth-modal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content border-0 shadow-lg"><div class="modal-header border-0 pb-0" style="background:var(--color-primary);border-radius:10px 10px 0 0;"><h5 class="modal-title text-white fw-bold"><i class="fas fa-music me-2"></i>MusicWorld</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div id="auth-prompt-msg" class="d-none alert alert-info py-2 small mb-3"></div><ul class="nav nav-tabs mb-4"><li class="nav-item"><button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane">Sign In</button></li><li class="nav-item"><button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-pane">Register</button></li></ul><div class="tab-content"><div class="tab-pane fade show active" id="login-pane"><div id="login-error" class="alert alert-danger d-none py-2 small"></div><form id="login-form"><div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="login-email" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="login-password" class="form-control" required></div><button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Sign In</button></form></div><div class="tab-pane fade" id="register-pane"><div id="register-error" class="alert alert-danger d-none py-2 small"></div><form id="register-form"><div class="mb-3"><label class="form-label small fw-semibold">Username</label><input type="text" id="reg-username" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Email</label><input type="email" id="reg-email" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Password</label><input type="password" id="reg-password" class="form-control" required></div><div class="mb-3"><label class="form-label small fw-semibold">Confirm Password</label><input type="password" id="reg-confirm" class="form-control" required></div><button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Create Account</button></form></div></div></div></div></div></div>
-<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100"><div id="download-toast" class="toast align-items-center text-bg-primary border-0"><div class="d-flex"><div class="toast-body"><i class="fas fa-download me-2"></i>Downloading album...</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div></div></div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100"><div id="download-toast" class="toast align-items-center text-bg-primary border-0"><div class="d-flex"><div class="toast-body"><i class="fas fa-download me-2"></i>Downloading...</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div></div></div>
 
 <section class="artist-hero" id="artist-hero-section">
   <div class="artist-hero__bg" id="artist-hero-bg"></div>
   <div class="artist-hero__overlay"></div>
   <div class="container" style="position:relative;z-index:2">
-    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html" class="text-white-50 text-decoration-none">Home</a></li><li class="breadcrumb-item active text-white">Artist</li></ol></nav>
-    <div class="row align-items-center g-4">
-      <div class="col-auto"><img id="artist-img" class="artist-hero__img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&q=80" alt="Artist"></div>
-      <div class="col">
+    <div class="d-flex align-items-center gap-3">
+      <img id="artist-img" class="artist-hero__img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=200&q=80" alt="Artist">
+      <div>
         <h1 class="artist-hero__name" id="artist-name">Loading...</h1>
-        <div class="artist-hero__meta"><span id="artist-origin"></span><span id="artist-formed"></span><span id="artist-genre"></span></div>
+        <div class="artist-hero__meta" style="font-size:0.85rem"><span id="artist-origin"></span><br><span id="artist-formed"></span></div>
       </div>
     </div>
   </div>
 </section>
 
-<main class="container py-5">
-  <div class="row g-5">
-    <div class="col-lg-8">
-      <section class="mb-5" data-animate><h2 class="section-title">About</h2><p class="artist-bio" id="artist-bio"></p></section>
-      <section class="mb-5" data-animate><h2 class="section-title">Albums</h2><div class="albums-grid" id="albums-grid"></div></section>
-    </div>
-    <div class="col-lg-4">
-      <section data-animate><h2 class="section-title">Achievements</h2><ul class="achievements-list" id="achievements-list"></ul></section>
-    </div>
-  </div>
+<main class="container py-4">
+  <section class="mb-4" data-animate><h2 class="section-title" style="font-size:1.2rem">About</h2><p class="artist-bio" id="artist-bio" style="font-size:0.9rem"></p></section>
+  <section class="mb-4" data-animate><h2 class="section-title" style="font-size:1.2rem">Achievements</h2><ul class="achievements-list" id="achievements-list"></ul></section>
+  <section class="mb-4" data-animate><h2 class="section-title" style="font-size:1.2rem">Albums</h2><div class="albums-grid" id="albums-grid"></div></section>
 </main>
 
-<footer class="mw-footer"><div class="container"><div class="row g-4"><div class="col-lg-4"><div class="footer__brand">Music<span>World</span></div><p class="footer__tagline">Your complete guide to the world of music.</p></div><div class="col-lg-2 col-6"><h6 class="footer__heading">Genres</h6><ul class="footer__links"><li><a href="category.html?genre=rock">Rock</a></li><li><a href="category.html?genre=jazz">Jazz</a></li><li><a href="category.html?genre=pop">Pop</a></li><li><a href="category.html?genre=rap">Rap</a></li><li><a href="category.html?genre=classical">Classical</a></li></ul></div><div class="col-lg-2 col-6"><h6 class="footer__heading">Discover</h6><ul class="footer__links"><li><a href="search.html?filter=new">New Releases</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="articles.html">Articles</a></li></ul></div><div class="col-lg-4"><h6 class="footer__heading">Stay Connected</h6><div class="footer__social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 MusicWorld. All rights reserved.</p></div></div></footer>
+<footer class="mw-footer"><div class="container"><div class="row g-3"><div class="col-12"><div class="footer__brand">Music<span>World</span></div><p class="footer__tagline">Your complete guide to the world of music.</p></div><div class="col-6"><h6 class="footer__heading">Genres</h6><ul class="footer__links"><li><a href="category.html?genre=rock">Rock</a></li><li><a href="category.html?genre=jazz">Jazz</a></li><li><a href="category.html?genre=pop">Pop</a></li><li><a href="category.html?genre=rap">Rap</a></li><li><a href="category.html?genre=classical">Classical</a></li></ul></div><div class="col-6"><h6 class="footer__heading">Discover</h6><ul class="footer__links"><li><a href="search.html?filter=new">New Releases</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="articles.html">Articles</a></li></ul></div></div><div class="footer__bottom"><p>© 2026 MusicWorld.</p></div></div></footer>
 
-<div id="music-player"><img id="player-art" class="player__art" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=80&q=60" alt="Now Playing"><div class="player__info"><div class="player__title" id="player-title">Select a track</div><div class="player__artist" id="player-artist">—</div></div><div class="player__controls"><button id="player-prev-btn"><i class="fas fa-backward-step"></i></button><button id="player-play-btn"><i class="fas fa-play"></i></button><button id="player-next-btn"><i class="fas fa-forward-step"></i></button></div><div class="player__volume"><i class="fas fa-volume-low"></i><input type="range" id="player-volume" min="0" max="1" step="0.05" value="0.8"></div></div>
+<div id="music-player"><img id="player-art" class="player__art" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=80&q=60" alt="Now Playing"><div class="player__info"><div class="player__title" id="player-title">Select a track</div><div class="player__artist" id="player-artist">—</div></div><div class="player__controls"><button id="player-prev-btn"><i class="fas fa-backward-step"></i></button><button id="player-play-btn"><i class="fas fa-play"></i></button><button id="player-next-btn"><i class="fas fa-forward-step"></i></button></div><div class="player__volume"></div></div>
 
 <script src="../js/data/music-data.js"></script>
 <script src="../js/data/articles-data.js"></script>
@@ -86,36 +87,28 @@
 <script src="../js/splash.js"></script>
 <script src="../js/main.js"></script>
 <script>
-var GENRE_IMGS={rock:'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=1200&q=80',jazz:'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=1200&q=80',pop:'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80',rap:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80',classical:'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1200&q=80'};
+var GENRE_IMGS={rock:'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=800&q=80',jazz:'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80',pop:'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80',rap:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',classical:'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80'};
 var ALBUM_IMGS=['https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80','https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80','https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&q=80','https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80','https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=400&q=80'];
-
+(function(){var btn=document.getElementById('hamburger-btn'),drawer=document.getElementById('nav-drawer'),overlay=document.getElementById('drawer-overlay'),closeBtn=document.getElementById('drawer-close');function open(){drawer.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}function close(){drawer.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}if(btn)btn.addEventListener('click',open);if(closeBtn)closeBtn.addEventListener('click',close);if(overlay)overlay.addEventListener('click',close);var sf=document.getElementById('navbar-search-form');if(sf)sf.addEventListener('submit',function(e){e.preventDefault();var q=document.getElementById('navbar-search-input');if(q&&q.value.trim())window.location.href='search.html?q='+encodeURIComponent(q.value.trim());});})();
 document.addEventListener('DOMContentLoaded',function(){
   Auth.updateNavbar();
-  document.getElementById('navbar-search-form').addEventListener('submit',function(e){e.preventDefault();var q=document.getElementById('navbar-search-input');if(q&&q.value.trim())window.location.href='search.html?q='+encodeURIComponent(q.value.trim());});
-
   var id=new URLSearchParams(window.location.search).get('id');
   var artist=(MusicData.artists||[]).find(function(a){return a.id===id;});
   if(!artist){document.getElementById('artist-name').textContent='Artist not found';return;}
-
   var genre=artist.genreIds&&artist.genreIds[0];
   var heroImg=GENRE_IMGS[genre]||GENRE_IMGS.rock;
   document.title=artist.name+' - MusicWorld';
-  var bg=document.getElementById('artist-hero-bg');
-  if(bg) bg.style.backgroundImage='url('+heroImg+')';
-  document.getElementById('artist-img').src=GENRE_IMGS[genre]||'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&q=80';
+  var bg=document.getElementById('artist-hero-bg');if(bg)bg.style.backgroundImage='url('+heroImg+')';
+  document.getElementById('artist-img').src=GENRE_IMGS[genre]||'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=200&q=80';
   document.getElementById('artist-name').textContent=artist.name;
-  document.getElementById('artist-origin').innerHTML='<i class="fas fa-location-dot me-1"></i>'+artist.origin+'&nbsp;&nbsp;';
-  document.getElementById('artist-formed').innerHTML='<i class="fas fa-calendar me-1"></i>Est. '+artist.formedYear+'&nbsp;&nbsp;';
-  document.getElementById('artist-genre').innerHTML='<i class="fas fa-music me-1"></i>'+artist.genreIds.join(', ');
+  document.getElementById('artist-origin').innerHTML='<i class="fas fa-location-dot me-1"></i>'+artist.origin;
+  document.getElementById('artist-formed').innerHTML='<i class="fas fa-calendar me-1"></i>Est. '+artist.formedYear;
   document.getElementById('artist-bio').textContent=artist.bio;
-
   var achList=document.getElementById('achievements-list');
   (artist.achievements||[]).forEach(function(ach){achList.innerHTML+='<li><i class="fas fa-trophy"></i><span>'+ach+'</span></li>';});
-
   var albumsGrid=document.getElementById('albums-grid');
   (artist.albums||[]).forEach(function(albumId,i){
-    var al=(MusicData.albums||[]).find(function(a){return a.id===albumId;});
-    if(!al) return;
+    var al=(MusicData.albums||[]).find(function(a){return a.id===albumId;});if(!al)return;
     var img=ALBUM_IMGS[i%ALBUM_IMGS.length];
     albumsGrid.innerHTML+='<div class="album-item"><a href="album.html?id='+al.id+'" class="text-decoration-none"><div class="mw-card" data-animate><div class="mw-card__img"><img src="'+img+'" alt="'+al.title+'" loading="lazy"><div class="mw-card__overlay"><button class="btn-play" data-play="'+al.id+'" data-title="'+al.title+'" data-artist="'+artist.name+'" data-cover="'+img+'"><i class="fas fa-play"></i></button></div></div><div class="mw-card__body"><p class="mw-card__title">'+al.title+'</p><p class="mw-card__meta">'+al.releaseDate.slice(0,4)+'</p></div></div></a><button class="download-btn" data-download="'+al.id+'"><i class="fas fa-download me-1"></i>Download</button></div>';
   });

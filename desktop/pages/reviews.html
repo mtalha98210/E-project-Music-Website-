@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var targetName='',targetLink='#';
     if(rev.targetType==='album'){var al=(MusicData.albums||[]).find(function(a){return a.id===rev.targetId;});if(al){targetName=al.title;targetLink='album.html?id='+al.id;}}
     else{var ar=(MusicData.artists||[]).find(function(a){return a.id===rev.targetId;});if(ar){targetName=ar.name;targetLink='artist.html?id='+ar.id;}}
-    grid.innerHTML+='<div class="col-md-6 col-lg-4" data-animate><div class="review-card"><div class="d-flex align-items-center justify-content-between mb-3"><div class="review-card__stars">'+stars+'</div><span class="review-type-badge badge-'+rev.targetType+'">'+rev.targetType+'</span></div><p class="review-card__body">"'+rev.body+'"</p><div class="review-card__footer"><div><div class="review-card__author">'+rev.author+'</div><div class="review-card__date">'+rev.date+'</div></div><a href="'+targetLink+'" class="review-card__target">'+targetName+' <i class="fas fa-arrow-right ms-1"></i></a></div></div></div>';
+    grid.innerHTML+='<div class="col-md-6 col-lg-4"><div class="review-card"><div class="d-flex align-items-center justify-content-between mb-3"><div class="review-card__stars">'+stars+'</div><span class="review-type-badge badge-'+rev.targetType+'">'+rev.targetType+'</span></div><p class="review-card__body">"'+rev.body+'"</p><div class="review-card__footer"><div><div class="review-card__author">'+rev.author+'</div><div class="review-card__date">'+rev.date+'</div></div><a href="'+targetLink+'" class="review-card__target">'+targetName+' <i class="fas fa-arrow-right ms-1"></i></a></div></div></div>';
   });
 });
 </script>

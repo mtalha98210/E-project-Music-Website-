@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded',function(){
   var grid=document.getElementById('articles-grid');
   (ArticlesData||[]).forEach(function(art,i){
     var img=ART_IMGS[i%ART_IMGS.length];
-    grid.innerHTML+='<div class="col-md-6 col-lg-4" data-animate><div class="article-card"><img class="article-card__img" src="'+img+'" alt="'+art.title+'" loading="lazy"><div class="article-card__body"><p class="article-card__category">'+art.category+'</p><h3 class="article-card__title">'+art.title+'</h3><p class="article-card__summary">'+art.summary+'</p><div class="article-card__footer"><div class="article-card__meta"><i class="fas fa-user me-1"></i>'+art.author+' &middot; '+art.date+'</div><a href="#" class="btn-read-more" data-article-id="'+art.id+'">Read More <i class="fas fa-arrow-right ms-1"></i></a></div></div></div></div>';
+    grid.innerHTML+='<div class="col-md-6 col-lg-4"><div class="article-card"><img class="article-card__img" src="'+img+'" alt="'+art.title+'" loading="lazy"><div class="article-card__body"><p class="article-card__category">'+art.category+'</p><h3 class="article-card__title">'+art.title+'</h3><p class="article-card__summary">'+art.summary+'</p><div class="article-card__footer"><div class="article-card__meta"><i class="fas fa-user me-1"></i>'+art.author+' &middot; '+art.date+'</div><a href="#" class="btn-read-more" data-article-id="'+art.id+'">Read More <i class="fas fa-arrow-right ms-1"></i></a></div></div></div></div>';
   });
 
   document.addEventListener('click',function(e){
